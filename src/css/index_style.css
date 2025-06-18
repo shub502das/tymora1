@@ -137,7 +137,9 @@ body {
 
 .inner_banner {
     padding: 8.75rem 0;
-    background: url(../images/collection_banner.jpg) no-repeat center;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background: url(../images/collection_banner.jpg) no-repeat center; */
     background-size: cover;
 }
 .toast {
@@ -169,7 +171,12 @@ body {
     padding: 0.813rem 0;
     transform: translateY(0);
 }
-
+.main_header .logo_sec img{
+    transition: all 0.3s ease-in-out;
+}
+.main_header .logo_sec img:hover{
+    filter: grayscale(1) invert(0);
+}
 .main_header.top_scroll {
     padding: 0.5rem 0;
     position: fixed;
@@ -438,7 +445,7 @@ body {
 }
 .review_sec .slick-dots {
     margin: 3rem 0 0;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     font-size: 0;
 }
@@ -480,9 +487,14 @@ body {
 .faq_sec .active_accordion {
     background: url(../images/open_img.png) no-repeat 100% center;
 }
-.faq_sec .accordian_content {
-    display: none;
+.faq_sec .ReactCollapse--collapse {
+  transition: height 0.35s ease;
 }
+.faq_sec .ReactCollapse--content {
+  padding: 1px 0;
+  transform: translateY(0);
+}
+.faq_sec .ReactCollapse--content .cmn_para,
 .faq_sec .accordian_content .cmn_para{
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -503,6 +515,10 @@ body {
 }
 .footer_sec .footer_main img{
     max-width: 144px;
+    transition: all 0.3s ease-in-out;
+}
+.footer_sec .footer_main img:hover{
+    filter: grayscale(100);
 }
 .footer_sec .footer_main p{
     font-size: 0.75rem;
@@ -544,9 +560,9 @@ body {
     font-size: 0.875rem;
 }
 /*==================== Checkout Page Css ====================*/
-.checkout_banner{
+/* .checkout_banner{
     background-image: url(../images/checkout_banner.jpg);
-}
+} */
 #checkout_form{
     max-width: 748px;
     margin-top: 3rem;
@@ -581,9 +597,9 @@ body {
     border-color: var(--lightgrey);
 }
 /*==================== Cart Page Css ====================*/
-.cart_banner{
+/* .cart_banner{
     background-image: url(../images/cart_banner.jpg);
-}
+} */
 .cart_sec .cmn_head{
     font-size: 1.5rem;
     line-height: 2rem;
@@ -718,7 +734,7 @@ body {
         background: url(../images/edition_bg@2x.jpg) no-repeat center;
         background-size: cover;
     }
-    .inner_banner {
+    /* .inner_banner {
         background: url(../images/collection_banner@2x.jpg) no-repeat center;
         background-size: cover;
     }
@@ -729,7 +745,7 @@ body {
     .cart_banner {
         background: url(../images/cart_banner@2x.jpg) no-repeat center;
         background-size: cover;
-    }
+    } */
 }
 /*==================== Media Query ====================*/
 @media screen and (max-width:1140px) {

@@ -1,32 +1,39 @@
+import { Link } from "react-router-dom";
+
 const MainFooter = () => {
-    return     <footer className="footer_sec sec_margin mb-0" id="footer">
+
+    let footerTopContent = [
+        {
+            topimg: "images/footer_icon1.svg",
+            toptext: "Worldwide Shipping",
+        },
+        {
+            topimg: "images/footer_icon2.svg",
+            toptext: "72 Hours Shipment",
+        },
+        {
+            topimg: "images/footer_icon3.svg",
+            toptext: "Free Return & Refund",
+        },
+        {
+            topimg: "images/footer_icon4.svg",
+            toptext: "Certified Watches",
+        },
+    ];
+
+
+    return <footer className="footer_sec sec_margin mb-0" id="footer">
         <div className="footer_top bg_blue text-white">
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-md-3">
-                        <div className="each_item d-flex align-items-center">
-                            <img src="images/footer_icon1.svg" alt=""/>
-                            <p className="ms-3 mb-0">Worldwide Shipping</p>
+                    {footerTopContent.map((footerTopItem, index) => (
+                        <div className="col-md-3" key={index}>
+                            <div className="each_item d-flex align-items-center">
+                                <img src={footerTopItem.topimg} alt="Footer Top Icon" />
+                                <p className="ms-3 mb-0">{footerTopItem.toptext}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="each_item d-flex align-items-center">
-                            <img src="images/footer_icon2.svg" alt=""/>
-                            <p className="ms-3 mb-0">72 Hours Shipment</p>
-                        </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="each_item d-flex align-items-center">
-                            <img src="images/footer_icon3.svg" alt=""/>
-                            <p className="ms-3 mb-0">Free Return & Refund</p>
-                        </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="each_item d-flex align-items-center">
-                            <img src="images/footer_icon4.svg" alt=""/>
-                            <p className="ms-3 mb-0">Certified Watches</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
@@ -35,7 +42,7 @@ const MainFooter = () => {
                 <div className="row">
                     <div className="col-md-3">
                         <div className="each_col">
-                            <a href="index.html"><img src="images/footer_logo.svg" alt=""/></a>
+                            <Link to="/"><img src="images/footer_logo.svg" alt="" /></Link>
                             <p className="cmn_para text_grey mt-3">Tymora Watches offers premium timepieces that blend
                                 classNameic elegance with modern craftsmanship. Each watch is meticulously designed to
                                 provide timeless style and reliable performance, making it a perfect accessory for any
@@ -77,13 +84,13 @@ const MainFooter = () => {
                             <p><a href="mailto:support@tymorawatches.co.in">support@tymorawatches.co.in</a></p>
                             <ul className="social_icons d-flex align-items-center">
                                 <li className="d-flex justify-content-center align-items-center bg-white shadow rounded-2">
-                                    <a href="javascript:void(0);" className="m-0"><img src="images/fb_icon.svg" alt=""/></a>
+                                    <a href="javascript:void(0);" className="m-0"><img src="images/fb_icon.svg" alt="" /></a>
                                 </li>
                                 <li className="d-flex justify-content-center align-items-center bg-white shadow rounded-2">
-                                    <a href="javascript:void(0);" className="m-0"><img src="images/insta_icon.svg" alt=""/></a>
+                                    <a href="javascript:void(0);" className="m-0"><img src="images/insta_icon.svg" alt="" /></a>
                                 </li>
                                 <li className="d-flex justify-content-center align-items-center bg-white shadow rounded-2">
-                                    <a href="javascript:void(0);" className="m-0"><img src="images/twitter_icon.svg" alt=""/></a>
+                                    <a href="javascript:void(0);" className="m-0"><img src="images/twitter_icon.svg" alt="" /></a>
                                 </li>
                             </ul>
                         </div>

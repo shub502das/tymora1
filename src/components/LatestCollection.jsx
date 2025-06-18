@@ -1,20 +1,17 @@
 import { Link } from "react-router-dom";
 import { allProducts } from "../data/product-data.jsx";
-import Innerbanner from "../components/Innerbanner.jsx";
-import Faqs from "../components/Faqs.jsx";
 
-const Collectionpage = () => {
+const LatestCollection = () => {
+    const latestCollectionProducts = allProducts.slice(4);
+
     return <>
-        <Innerbanner
-            bgimage="images/collection_banner.jpg"
-            bannertitle="Our Collection"
-        />
-        <section className="bestseller_sec all_products sec_margin text-center">
+
+        <section className="bestseller_sec latest_collection sec_margin text-center">
             <div className="container">
-                <h2 className="cmn_head blue_bar text_blue pb-2">Choose from Our Best</h2>
-                <p className="cmn_para text_grey mt-3">Top Picks: Customer-Favorite Watches</p>
+                <h2 className="cmn_head blue_bar text_blue pb-2">Latest Collection</h2>
+                <p className="cmn_para text_grey mt-3">Upgrade Your Wrist with Our New Collection</p>
                 <div className="row">
-                    {allProducts.map((productItem, index) => (
+                    {latestCollectionProducts.map((productItem, index) => (
                         <div className="col-md-3 mt-3" key={index}>
                             <div className="each_product mx-auto position-relative overflow-hidden">
                                 <img src={productItem.prodImg} alt="Product" className="w-auto mx-auto prod_img" />
@@ -38,7 +35,7 @@ const Collectionpage = () => {
                 </div>
             </div>
         </section>
-        <Faqs />
-    </>
+    </>;
 };
-export default Collectionpage;
+
+export default LatestCollection;

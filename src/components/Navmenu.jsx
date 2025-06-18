@@ -1,9 +1,9 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const Navmenu = ({menuOpen}) => {
+const Navmenu = ({menuopen}) => {
     return <div className="nav_sec py-0 py-md-3">
             <div className="container">
-                <nav className={`nav_menu ${menuOpen ? 'open' : ''} w-100 mx-auto bg-white`}>
+                <nav className={`nav_menu ${menuopen ? 'open' : ''} w-100 mx-auto bg-white`}>
                     <ul className="d-flex align-items-center justify-content-between flex-column flex-md-row">
                         <li><a href="#bestsellers">Bestsellers</a></li>
                         <li><a href="#features">Features</a></li>
