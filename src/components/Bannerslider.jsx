@@ -5,6 +5,16 @@ import { Link } from "react-router";
 
 const Bannerslider = () => {
 
+    const bannerSliderSetting = {
+        dots: false,
+        autoplay: true,
+        arrows: false,
+        infinite: false,
+        autoplay: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
 
     const bannerContent = [
         {
@@ -29,23 +39,25 @@ const Bannerslider = () => {
 
     return <>
         {/* Banner*/}
-        <section className="banner_sec">
-            <div className="banner_slider">
-                <div className="item">
+    <section className="banner_sec">
+        <Slider {...bannerSliderSetting} className="banner_slider">
+            {bannerContent.map((bannerItem,index) => (
+                <div className={`item ${index === 1 ? 'for_watch_width' : ''}`} key={index}>
                     <div className="each_item position-relative">
-                        <img src={bannerItem.bannerbg} alt="Banner Background" className="banner_bg_img" />
-                        <img src={bannerItem.bannerwatch} alt="Banner Watch" className="banner_watch" />
+                        <img src={bannerItem.bannerbg} alt="Banner Background" className="banner_bg_img"/>
+                        <img src={bannerItem.bannerwatch} alt="Banner Watch" className="banner_watch"/>
                         <div className="content_sec position-absolute d-flex justify-content-center align-items-center">
                             <div className="banner_text position-relative z-1">
-                                <h2 className="cmn_head text_blue mb-0" dangerouslySetInnerHTML={{ __html: bannerItem.bannerheading }} />
+                                <h2 className="cmn_head text_blue mb-0" dangerouslySetInnerHTML={{__html: bannerItem.bannerheading}}/>
                                 <p className="cmn_para cmn_para_sm text_grey mt-3 mb-4">{bannerItem.bannerdescription}</p>
                                 <Link to="/collection" className="cta_btn">Shop Now+</Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            ))}
+        </Slider>
+    </section>
     </>
 };
 export default Bannerslider;
