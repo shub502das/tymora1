@@ -1,6 +1,14 @@
+import { useParams } from "react-router-dom";
 import WatchDetails from "../components/Watchdetails";
+import { allProducts } from "../data/product-data";
 
 const ProductdetailsPage = () => {
+
+    const { id } = useParams();
+    const product = allProducts.find(findproduct => findproduct.id === id);
+
+    if (!product)
+        return <h2>Product not found</h2>;
 
     let sizeGuide = [
         {
@@ -15,7 +23,7 @@ const ProductdetailsPage = () => {
     ];
 
     return <>
-        <WatchDetails/>
+        <WatchDetails product={product}/>
         <section className="size_guide text-center">
             <div className="container">
                 <h2 className="cmn_head blue_bar text_blue pb-2">Look at Our Size Quide</h2>

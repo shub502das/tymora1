@@ -28,7 +28,7 @@ const Collectionpage = () => {
                                         ₹{productItem.price.currentPrice}
                                     </p>
                                 </div>
-                                <Link to="/Product-details" className="cta_btn mt-3">Shop Now+</Link>
+                                <Link to={`/Product-details/${productItem.id}`} className="cta_btn mt-3">Shop Now+</Link>
                                 <Link to="/Cart" className="product_cart position-absolute bg_blue d-flex justify-content-center align-items-center">
                                     <img src="images/cart_icon.svg" alt="Cart Icon" />
                                 </Link>
