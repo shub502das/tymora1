@@ -1,13 +1,23 @@
-import { useState } from "react";
-import { Collapse } from 'react-collapse';
+import { Collapse } from "react-collapse";
+import { useReducer } from "react";
+
+
 
 const Faqs = () => {
 
-    let [faqActive, setFaqActive] = useState(null);
+    let initialstate = null;
 
-    let toggleAccordion = (index) => {
-        setFaqActive(prevIndex => (prevIndex === index ? null : index))
+    let reducer = (state, action) => {
+        switch (action.type) {
+            case "TOGGLE_FAQ":
+                return state === action.index ? null : action.index;               
+       
+            default:
+                return state;
+        }
     };
+
+    let [state, dispatch] = useReducer(reducer, initialstate);
 
     const allFaqs = [
         {
@@ -45,11 +55,11 @@ const Faqs = () => {
                     {allFaqs.map((faqItem, index) => (
                         <div className="each_accordian bg-white shadow" key={index}>
                             <h2
-                                className={`accordian_title text_blue position-relative mb-0 ${faqActive === index ? 'active_accordion' : ''}`}
-                                onClick={() => toggleAccordion(index)}>{faqItem.question}</h2>
-                            <Collapse isOpened={faqActive === index}>
-                                <p className="cmn_para text_grey mt-3">{faqItem.answer}</p>
-                            </Collapse>
+                                className={`accordian_title text_blue position-relative mb-0 `}
+                                onClick={() => dispatch({type: "TOGGLE_FAQ", index})}>{faqItem.question}</h2>
+                                <Collapse isOpened={state === index}>
+                                    <p className="cmn_para text_grey mt-3">{faqItem.answer}</p>
+                                </Collapse>
                         </div>
                     ))}
                 </div>

@@ -17,20 +17,20 @@ const Bannerslider = () => {
 
     const bannerContent = [
         {
-            bannerbg: "images/banner_bg1.jpg",
-            bannerwatch: "images/titan_watch.png",
+            bannerbg: "/images/banner_bg1.jpg",
+            bannerwatch: "/images/titan_watch.png",
             bannerheading: "Timeless Elegance<br> for Every Moment",
             bannerdescription: "Designed for those who appreciate craftsmanship, elegance, and the power of time.",
         },
         {
-            bannerbg: "images/banner_bg2.jpg",
-            bannerwatch: "images/tissot_watch.png",
+            bannerbg: "/images/banner_bg2.jpg",
+            bannerwatch: "/images/tissot_watch.png",
             bannerheading: "Where Precision<br> Meets Prestige",
             bannerdescription: "Discover exquisite timepieces that blend heritage craftsmanship with modern sophistication.",
         },
         {
-            bannerbg: "images/banner_bg3.jpg",
-            bannerwatch: "images/tissot_watch_women.png",
+            bannerbg: "/images/banner_bg3.jpg",
+            bannerwatch: "/images/tissot_watch_women.png",
             bannerheading: "Classic Watches,<br> Eternal Style.",
             bannerdescription: "Featuring sleek dials and premium materials, each timepiece is a tribute to enduring style.",
         },

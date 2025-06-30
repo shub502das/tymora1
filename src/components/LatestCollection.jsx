@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { allProducts } from "../data/product-data.jsx";
+import { useCart } from "../context/CartContext.jsx";
 
 const LatestCollection = () => {
+
     const latestCollectionProducts = allProducts.slice(4);
+
+    const { addToCart } = useCart();
 
     return <>
 
@@ -20,14 +24,14 @@ const LatestCollection = () => {
                                     <p className="cmn_para text_grey mb-3">{productItem.prodsubtitle}</p>
                                     <p className="current_price text_gold d-flex align-items-center justify-content-center fw-bold mb-0">
                                         <span className="original_price text_grey text-decoration-line-through fw-normal me-2">
-                                            ₹{productItem.price.originalPrice}
+                                            ₹{(productItem.price.originalPrice).toLocaleString('en-IN')}
                                         </span>
-                                        ₹{productItem.price.currentPrice}
+                                        ₹{(productItem.price.currentPrice).toLocaleString('en-IN')}
                                     </p>
                                 </div>
-                                <Link to={`/Product-details/${productItem.id}`} className="cta_btn mt-3">Shop Now+</Link>
-                                <Link to="/Cart" className="product_cart position-absolute bg_blue d-flex justify-content-center align-items-center">
-                                    <img src="images/cart_icon.svg" alt="Cart Icon" />
+                                <Link to={`/Product-details/${productItem.slug}`} className="cta_btn mt-3">Shop Now+</Link>
+                                <Link onClick={() => addToCart(productItem)} className="product_cart position-absolute bg_blue d-flex justify-content-center align-items-center">
+                                    <img src="/images/cart_icon.svg" alt="Cart Icon" />
                                 </Link>
                             </div>
                         </div>

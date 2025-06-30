@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route, useLocation,} from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import Homepage from "./pages/Home.jsx";
 import Collectionpage from "./pages/Collection.jsx";
 import Cartpage from "./pages/Cart.jsx";
@@ -7,6 +8,8 @@ import Thankyoupage from "./pages/Thank-you.jsx";
 import MainFooter from "./components/Footer";
 import MainHeader from "./components/Header";
 import Checkoutpage from "./pages/Checkout.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
+
 
 function Mainlayout() {
 
@@ -17,16 +20,15 @@ function Mainlayout() {
   return (
     <>
       {!shouldHideLayout && <MainHeader />}
-
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/collection" element={<Collectionpage />} />
-        <Route path="/product-details/:id" element={<ProductDetailspage />} />
-        <Route path="/cart" element={<Cartpage />} />
-        <Route path="/checkout" element={<Checkoutpage />} />
-        <Route path="/thank-you" element={<Thankyoupage />} />
-      </Routes>
-
+        <ScrollToTop/>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/collection" element={<Collectionpage />} />
+            <Route path="/product-details/:slug" element={<ProductDetailspage />} />
+            <Route path="/cart" element={<Cartpage />} />
+            <Route path="/checkout" element={<Checkoutpage />} />
+            <Route path="/thank-you" element={<Thankyoupage />} />
+          </Routes>
       {!shouldHideLayout && <MainFooter />}
     </>
   );
@@ -35,7 +37,9 @@ function Mainlayout() {
 function App() {
   return (
     <BrowserRouter>
-      <Mainlayout />
+      <CartProvider>
+        <Mainlayout />
+      </CartProvider>
     </BrowserRouter>
   );
 }

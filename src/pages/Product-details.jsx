@@ -4,21 +4,21 @@ import { allProducts } from "../data/product-data";
 
 const ProductdetailsPage = () => {
 
-    const { id } = useParams();
-    const product = allProducts.find(findproduct => findproduct.id === id);
+    const { slug } = useParams();
+    const product = allProducts.find(findproduct => findproduct.slug === slug);
 
     if (!product)
-        return <h2>Product not found</h2>;
+        return <h2 className="text-center mt-5 mb-0 text-danger">Product not found</h2>;
 
     let sizeGuide = [
         {
-           guideimg: "images/size_guide1.jpg", 
+           guideimg: "/images/size_guide1.jpg", 
         },
         {
-           guideimg: "images/size_guide2.jpg", 
+           guideimg: "/images/size_guide2.jpg", 
         },
         {
-           guideimg: "images/size_guide3.jpg", 
+           guideimg: "/images/size_guide3.jpg", 
         }
     ];
 

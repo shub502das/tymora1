@@ -30,19 +30,19 @@ const CompanySlider = () => {
 
     const companySliderContent = [
         {
-            logoimg: "images/company_logo1.svg",
+            logoimg: "/images/company_logo1.svg",
         },
         {
-            logoimg: "images/company_logo2.svg",
+            logoimg: "/images/company_logo2.svg",
         },
         {
-            logoimg: "images/company_logo3.svg",
+            logoimg: "/images/company_logo3.svg",
         },
         {
-            logoimg: "images/company_logo4.svg",
+            logoimg: "/images/company_logo4.svg",
         },
         {
-            logoimg: "images/company_logo5.svg",
+            logoimg: "/images/company_logo5.svg",
         }
     ];
 

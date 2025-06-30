@@ -632,7 +632,12 @@ body {
 }
 .cart_sec .cart_summary p{
     font-size: 0.938rem;
+    line-height: 1.063rem;
     max-width: 150px;
+    margin-top: 2px;
+}
+.cart_sec .cart_remove{
+    cursor: pointer;
 }
 .cart_sec .cart_remove:hover{
     filter: brightness(0);
@@ -655,6 +660,11 @@ body {
 }
 .quantity_change .btn{
     font-size: 10px;
+    background-color: #fff;
+}
+.quantity_change .btn:hover{
+    border-color: var(--golden);
+    background-color: var(--golden);
 }
 /*==================== Details Page Css ====================*/
 .product_details{

@@ -4,19 +4,19 @@ const MainFooter = () => {
 
     let footerTopContent = [
         {
-            topimg: "images/footer_icon1.svg",
+            topimg: "/images/footer_icon1.svg",
             toptext: "Worldwide Shipping",
         },
         {
-            topimg: "images/footer_icon2.svg",
+            topimg: "/images/footer_icon2.svg",
             toptext: "72 Hours Shipment",
         },
         {
-            topimg: "images/footer_icon3.svg",
+            topimg: "/images/footer_icon3.svg",
             toptext: "Free Return & Refund",
         },
         {
-            topimg: "images/footer_icon4.svg",
+            topimg: "/images/footer_icon4.svg",
             toptext: "Certified Watches",
         },
     ];
@@ -42,7 +42,7 @@ const MainFooter = () => {
                 <div className="row">
                     <div className="col-md-3">
                         <div className="each_col">
-                            <Link to="/"><img src="images/footer_logo.svg" alt="" /></Link>
+                            <Link to="/"><img src="/images/footer_logo.svg" alt="" /></Link>
                             <p className="cmn_para text_grey mt-3">Tymora Watches offers premium timepieces that blend
                                 classNameic elegance with modern craftsmanship. Each watch is meticulously designed to
                                 provide timeless style and reliable performance, making it a perfect accessory for any
@@ -84,13 +84,13 @@ const MainFooter = () => {
                             <p><a href="mailto:support@tymorawatches.co.in">support@tymorawatches.co.in</a></p>
                             <ul className="social_icons d-flex align-items-center">
                                 <li className="d-flex justify-content-center align-items-center bg-white shadow rounded-2">
-                                    <a href="javascript:void(0);" className="m-0"><img src="images/fb_icon.svg" alt="" /></a>
+                                    <a href="javascript:void(0);" className="m-0"><img src="/images/fb_icon.svg" alt="" /></a>
                                 </li>
                                 <li className="d-flex justify-content-center align-items-center bg-white shadow rounded-2">
-                                    <a href="javascript:void(0);" className="m-0"><img src="images/insta_icon.svg" alt="" /></a>
+                                    <a href="javascript:void(0);" className="m-0"><img src="/images/insta_icon.svg" alt="" /></a>
                                 </li>
                                 <li className="d-flex justify-content-center align-items-center bg-white shadow rounded-2">
-                                    <a href="javascript:void(0);" className="m-0"><img src="images/twitter_icon.svg" alt="" /></a>
+                                    <a href="javascript:void(0);" className="m-0"><img src="/images/twitter_icon.svg" alt="" /></a>
                                 </li>
                             </ul>
                         </div>

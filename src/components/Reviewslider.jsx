@@ -23,22 +23,22 @@ const ReviewSlider = () => {
 
     let reviewSliderContent = [
         {
-            userimg: "images/user_img1.jpg",
+            userimg: "/images/user_img1.jpg",
             userreview: "The craftsmanship is outstanding. Every detail, from the polished bezel to the weight of the strap, speaks of precision and care. You can feel the quality the moment you put it on—it’s clear this watch was built to last and impress.",
             username: "Sophia M",
         },
         {
-            userimg: "images/user_img2.jpg",
+            userimg: "/images/user_img2.jpg",
             userreview: "I've owned watches from big-name brands, but this one stands out. The attention to detail and build quality are outstanding—especially for the price. It's become my everyday go-to piece, and I constantly get compliments.",
             username: "Naveen K",
         },
         {
-            userimg: "images/user_img3.jpg",
+            userimg: "/images/user_img3.jpg",
             userreview: "I bought a watch for my husband’s birthday, and he was blown away. The packaging was elegant, and the timepiece itself is stunning. It's rare to find something this luxurious and affordable. Highly recommend!",
             username: "Elena R",
         },
         {
-            userimg: "images/user_img4.jpg",
+            userimg: "/images/user_img4.jpg",
             userreview: "This watch exceeded all my expectations. From the moment I unboxed it, I could tell it was something special. The design is modern yet classNameic, and it feels solid on the wrist. I’ve already recommended this site to a few friends!",
             username: "James L",
         },

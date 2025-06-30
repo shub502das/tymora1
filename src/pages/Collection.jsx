@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import { allProducts } from "../data/product-data.jsx";
 import Innerbanner from "../components/Innerbanner.jsx";
 import Faqs from "../components/Faqs.jsx";
-
+import { useCart } from "../context/CartContext.jsx";
 const Collectionpage = () => {
+
+    const { addToCart } = useCart();
+
     return <>
         <Innerbanner
-            bgimage="images/collection_banner.jpg"
+            bgimage="/images/collection_banner.jpg"
             bannertitle="Our Collection"
         />
         <section className="bestseller_sec all_products sec_margin text-center">
@@ -23,14 +26,14 @@ const Collectionpage = () => {
                                     <p className="cmn_para text_grey mb-3">{productItem.prodsubtitle}</p>
                                     <p className="current_price text_gold d-flex align-items-center justify-content-center fw-bold mb-0">
                                         <span className="original_price text_grey text-decoration-line-through fw-normal me-2">
-                                            ₹{productItem.price.originalPrice}
+                                            ₹{(productItem.price.originalPrice).toLocaleString('en-IN')}
                                         </span>
-                                        ₹{productItem.price.currentPrice}
+                                        ₹{(productItem.price.currentPrice).toLocaleString('en-IN')}
                                     </p>
                                 </div>
-                                <Link to={`/Product-details/${productItem.id}`} className="cta_btn mt-3">Shop Now+</Link>
-                                <Link to="/Cart" className="product_cart position-absolute bg_blue d-flex justify-content-center align-items-center">
-                                    <img src="images/cart_icon.svg" alt="Cart Icon" />
+                                <Link to={`/Product-details/${productItem.slug}`} className="cta_btn mt-3">Shop Now+</Link>
+                                <Link onClick={() => addToCart(productItem)} className="product_cart position-absolute bg_blue d-flex justify-content-center align-items-center">
+                                    <img src="/images/cart_icon.svg" alt="Cart Icon" />
                                 </Link>
                             </div>
                         </div>
